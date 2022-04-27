@@ -1,0 +1,21 @@
+{
+  "name": "cse341-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "week1-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node week1-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jofravimusic/cse341-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jofravimusic/cse341-node/issues"
+  },
+  "homepage": "https://github.com/Jofravimusic/cse341-node#readme"
+}
