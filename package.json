@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Jofravimusic/cse341-node#readme",
   "dependencies": {
-    "express": "^4.18.0"
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "mongodb": "^4.5.0"
   }
 }
