@@ -1,3 +1,13 @@
 GET http://localhost:3000
 
-GET 
+###
+
+GET http://localhost:3000/contacts
+
+###
+
+GET https://https://cse341-node-jofravimusic.herokuapp.com/contacts
+
+###
+
+GET GET https://https://cse341-node-jofravimusic.herokuapp.com/contacts/626c5f10e321dda9aa8a2f19
