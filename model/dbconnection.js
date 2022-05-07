@@ -1,23 +1,26 @@
-//Enviroment variables config
-const dotenv = require("dotenv");
+// Enviroment variables config
+const dotenv = require('dotenv');
+
 dotenv.config();
 const url = process.env.DBurl;
-//Database Variables
-const {MongoClient} = require('mongodb');
+// Database Variables
+const { MongoClient } = require('mongodb');
+
 const client = new MongoClient(url);
 
+// eslint-disable-next-line no-underscore-dangle
 let _contacts;
 
-async function connectDatabase(){
-    await client.connect((err, database) =>{
-        if(err) throw err;
-        _contacts = database.db('contacts');
-        console.log("Database Connected Sucsesfully");
-    });
+async function connectDatabase() {
+  await client.connect((err, database) => {
+    if (err) throw err;
+    _contacts = database.db('contacts');
+    console.log('Database Connected Sucsesfully');
+  });
 }
 
-function getContacts(){
-    return _contacts.collection('contacts');
+function getContacts() {
+  return _contacts.collection('contacts');
 }
 
-module.exports = {connectDatabase, getContacts};
+module.exports = { connectDatabase, getContacts };

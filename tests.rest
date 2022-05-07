@@ -11,3 +11,86 @@ GET https://https://cse341-node-jofravimusic.herokuapp.com/contacts
 ###
 
 GET https://https://cse341-node-jofravimusic.herokuapp.com/contacts/626c5f10e321dda9aa8a2f19
+
+###
+
+POST /contacts/ HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+Cache-Control: no-cache
+Postman-Token: db7b6ea5-9207-6858-4f6f-dd38ddd1b660
+
+{
+    "firstName": "Rose",
+    "lastName": "Tree",
+    "email": "flowers@garden.oaks",
+    "favoriteColor": "Green",
+    "birthday": "30/02/2000"
+}
+
+###
+
+PUT /contacts/6276f961fafc0b8b76c791ba HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+Cache-Control: no-cache
+Postman-Token: 66bba111-a7bf-d0be-728b-1219573b1ab7
+
+{
+    "firstName": "Rose",
+    "lastName": "Tree",
+    "email": "flowers@garden.oak",
+    "favoriteColor": "Green",
+    "birthday": "30/02/2000"
+}
+
+###
+
+DELETE /contacts/6276f961fafc0b8b76c791ba HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+Cache-Control: no-cache
+Postman-Token: d85ab860-234d-830f-b1cf-9288f31442f8
+
+
+###
+
+POST /contacts/ HTTP/1.1
+Host: cse341-node-jofravimusic.herokuapp.com
+Content-Type: application/json
+Cache-Control: no-cache
+Postman-Token: 431b9257-229f-0535-4132-649a3ef3ca0e
+
+{
+
+    "firstName": "Rose",
+    "lastName": "Tree",
+    "email": "flowers@garden.oak",
+    "favoriteColor": "Green",
+    "birthday": "30/02/2000"
+}
+
+###
+
+PUT /contacts/6276f89a421d959834e37504 HTTP/1.1
+Host: cse341-node-jofravimusic.herokuapp.com
+Content-Type: application/json
+Cache-Control: no-cache
+Postman-Token: b54cba75-0053-0931-2cf6-f798cb6d110d
+
+{
+
+    "firstName": "Rose",
+    "lastName": "Tree",
+    "email": "flowers@garden.oaks",
+    "favoriteColor": "Green",
+    "birthday": "30/02/2000"
+}
+
+###
+
+DELETE /contacts/6276f89a421d959834e37504 HTTP/1.1
+Host: cse341-node-jofravimusic.herokuapp.com
+Content-Type: application/json
+Cache-Control: no-cache
+Postman-Token: f85e4f84-3c45-8732-ded6-72825ac3fd91
