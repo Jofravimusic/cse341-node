@@ -6,7 +6,7 @@ const doc = {
     description:
       'API for contacts for cse341 course developed by José Aguirre, following instructions from the lessons',
   },
-  host: 'https://cse341-node-jofravimusic.herokuapp.com/',
+  host: 'cse341-node-jofravimusic.herokuapp.com/',
   schemes: ['https'],
 };
 

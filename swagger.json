@@ -5,7 +5,7 @@
     "description": "API for contacts for cse341 course developed by José Aguirre, following instructions from the lessons",
     "version": "1.0.0"
   },
-  "host": "https://cse341-node-jofravimusic.herokuapp.com/",
+  "host": "cse341-node-jofravimusic.herokuapp.com/",
   "basePath": "/",
   "schemes": [
     "https"
@@ -151,6 +151,13 @@
             "description": "Not Found"
           }
         }
+      }
+    },
+    "/api-docs/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
       }
     }
   }
