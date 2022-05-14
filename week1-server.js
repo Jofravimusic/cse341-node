@@ -15,7 +15,7 @@ app
       'Access-Control-Allow-Origin',
       'https://cse341-contacts-frontend.netlify.app'
     );
-    res.setHeader(
+    /*res.setHeader(
       'Access-Control-Allow-Headers',
       'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
     );
@@ -23,7 +23,7 @@ app
     res.setHeader(
       'Access-Control-Allow-Methods',
       'GET, POST, PUT, DELETE, OPTIONS'
-    );
+    );*/
     next();
   })
   .use('/', require('./routes'));
