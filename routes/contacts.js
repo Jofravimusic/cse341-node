@@ -3,6 +3,23 @@ const { ObjectId } = require('mongodb');
 
 const dbconnection = require('../model/dbconnection');
 
+routes.use((req, res, next) => {
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://cse341-contacts-frontend.netlify.app'
+  );
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+  );
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'GET, POST, PUT, DELETE, OPTIONS'
+  );
+  next();
+});
+
 // Get all Contacts
 routes.get('/', (req, res) => {
   const contacts = dbconnection.getContacts().find();
