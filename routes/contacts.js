@@ -1,7 +1,11 @@
 const routes = require('express').Router();
 const { ObjectId } = require('mongodb');
+const cors = require('cors');
+const { inputValidation, results } = require('../validation');
 
 const dbconnection = require('../model/dbconnection');
+
+routes.use(cors());
 
 routes.use((req, res, next) => {
   res.setHeader(
@@ -31,20 +35,30 @@ routes.get('/', (req, res) => {
 });
 
 // Create a Contact
-routes.post('/', (req, res) => {
-  const contact = dbconnection.getContacts().insertOne({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday,
-  });
+routes.post('/', inputValidation, (req, res) => {
+  try {
+    // eslint-disable-next-line no-underscore-dangle
+    const _result = results(req);
+    if (!_result.isEmpty()) {
+      return res.status(400).json({ errors: _result.array() });
+    }
 
-  contact.then((document) => {
-    if (!document.insertedId) return res.status(404).send(`No contact added`);
-    res.status(201).redirect(`/contacts/${document.insertedId}`);
-    console.log(`Contact was created with id: ${document.insertedId}`);
-  });
+    const contact = dbconnection.getContacts().insertOne({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      favoriteColor: req.body.favoriteColor,
+      birthday: req.body.birthday,
+    });
+
+    contact.then((document) => {
+      if (!document.insertedId) return res.status(404).send(`No contact added`);
+      res.status(201).redirect(`/contacts/${document.insertedId}`);
+      console.log(`Contact was created with id: ${document.insertedId}`);
+    });
+  } catch (error) {
+    res.status(404).send(error);
+  }
 });
 
 // Get a Contact by Id
