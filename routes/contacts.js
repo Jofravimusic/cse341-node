@@ -8,10 +8,16 @@ const dbconnection = require('../model/dbconnection');
 routes.use(cors());
 
 routes.use((req, res, next) => {
-  res.setHeader(
-    'Access-Control-Allow-Origin',
-    'https://cse341-contacts-frontend.netlify.app'
-  );
+  const corsWhitelist = [
+    'https://cse341-contacts-frontend.netlify.app',
+    'http://localhost:5500/week10',
+    'https://jofravimusic.github.io/WDD330-Jose-Aguirre/week10',
+    'http://127.0.0.1:5500/week10',
+  ];
+  if (corsWhitelist.indexOf(req.headers.origin) !== -1) {
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+  }
+
   res.setHeader(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
